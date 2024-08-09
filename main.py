@@ -4,7 +4,7 @@ import time
 
 st.title('Sorteio rifas :blue[InstUFS]')
 st.caption('Última atualização: 09/08/2024 - 12:27')
-st.image('Website/LOGOS/plaquinha.png')
+st.image('plaquinha.png')
 
 # Carlinhos, Amanda, Hélio, 
 # Stéphane, Kavin, Pedro, Paulo, 
