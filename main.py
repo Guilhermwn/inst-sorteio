@@ -1,9 +1,10 @@
 import streamlit as st
 import random
+import time
 
 st.title('Sorteio rifas :blue[InstUFS]')
-st.caption('Última atualização: 08/08/2024 - 23:44')
-st.image('plaquinha.png')
+st.caption('Última atualização: 09/08/2024 - 12:27')
+st.image('Website/LOGOS/plaquinha.png')
 
 # Carlinhos, Amanda, Hélio, 
 # Stéphane, Kavin, Pedro, Paulo, 
@@ -25,13 +26,24 @@ rifa16 = (
     [771, 777, 797, 799, 800]
 ) # guilherme
 rifa17_18 = [i for i in range(801,901)] # JP + john
+rifa19 = [901,918,935,946] # jarlison
 
-allnubers = rifa1_9 + rifa12 + rifa13 + rifa14 + rifa15 + rifa16 + rifa17_18
+allnubers = rifa1_9 + rifa12 + rifa13 + rifa14 + rifa15 + rifa16 + rifa17_18 + rifa19
 number = random.choice(allnubers)
 
 @st.dialog('NÚMERO SORTEADO!!!')
 def vote():
-    st.metric(label='Sorteado', value=number)
+    progress_text = "Sorteando..."
+    my_bar = st.progress(0, text=progress_text)
+
+    for percent_complete in range(100):
+        time.sleep(0.02)
+        if percent_complete == 99:
+            progress_text = "Sorteado!!"
+        my_bar.progress(percent_complete + 1, text=progress_text)
+
+    time.sleep(1)
+    st.metric(label='PARABÉNS!!',value=number)
     st.balloons()
     
 if st.button('SORTEAR', use_container_width=True):
