@@ -2,7 +2,8 @@ import streamlit as st
 import random
 
 st.title('Sorteio rifas :blue[InstUFS]')
-st.image('Website/LOGOS/plaquinha.png')
+st.caption('Última atualização: 08/08/2024 - 23:44')
+st.image('plaquinha.png')
 
 # Carlinhos, Amanda, Hélio, 
 # Stéphane, Kavin, Pedro, Paulo, 
